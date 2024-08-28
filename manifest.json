@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "LGUD",
+  "name": "Glups",
   "version": "1.0.0",
-  "description": "An addon to get profile's data of users in LinkedIn",
+  "description": "An addon to get LinkedIn user's profile solution.",
   "icons": {
     "16": "images/icon-16.png",
     "32": "images/icon-32.png",

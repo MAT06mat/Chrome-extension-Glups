@@ -4,7 +4,7 @@ var b = document.createElement("button")
 var s = document.createElement("span")
 
 s.classList.add("artdeco-button__text")
-s.innerText = "LGUD"
+s.innerText = "Glups"
 
 b.appendChild(s)
 b.style.margin = "20px"
