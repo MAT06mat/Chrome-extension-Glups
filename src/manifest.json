@@ -13,7 +13,13 @@
     "default_popup": "popup/popup.html",
     "default_icon": "images/icon32.png"
   },
-  "permissions": ["storage"],
+  "permissions": [
+    "storage",
+    "tabs",
+    "activeTab",
+    "scripting",
+    "downloads"
+  ],
   "content_scripts": [
     {
       "matches": [
@@ -23,5 +29,9 @@
       "js": ["scripts/content.js"],
       "css": ["css/style.css"]
     }
-  ]
+  ],
+  "background": {
+    "service_worker": "scripts/background.js"
+  },
+  "host_permissions": ["<all_urls>"]
 }
