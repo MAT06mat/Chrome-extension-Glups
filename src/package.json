@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "@types/chrome": "^0.0.270"
+  },
+  "dependencies": {
+    "linkedin-api-client": "^0.3.0"
   }
 }
