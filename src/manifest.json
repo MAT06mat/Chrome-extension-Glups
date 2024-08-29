@@ -4,23 +4,24 @@
   "version": "1.0.0",
   "description": "An addon to get LinkedIn user's profile solution.",
   "icons": {
-    "16": "images/icon-16.png",
-    "32": "images/icon-32.png",
-    "64": "images/icon-64.png",
-    "128": "images/icon-128.png"
+    "16": "images/icon16.png",
+    "32": "images/icon32.png",
+    "64": "images/icon64.png",
+    "128": "images/icon128.png"
   },
   "action": {
     "default_popup": "popup/popup.html",
-    "default_icon": "images/icon-32.png"
+    "default_icon": "images/icon32.png"
   },
   "permissions": ["storage"],
   "content_scripts": [
     {
-      "js": ["scripts/content.js"],
       "matches": [
         "https://www.linkedin.com/*",
         "https://linkedin.com/*"
-      ]
+      ],
+      "js": ["scripts/content.js"],
+      "css": ["css/style.css"]
     }
   ]
 }

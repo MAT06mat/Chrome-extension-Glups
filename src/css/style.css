@@ -1,0 +1,33 @@
+button.customButton {
+    background-color: rgb(10, 102, 194);
+    color: white;
+    margin: 20px;
+    position: fixed;
+    text-align: center;
+    justify-content: center;
+    width: 150px;
+    height: 40px;
+    box-shadow: 5px 5px 10px 2px #00000050;
+    border-radius: 20px;
+    font-size: larger;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    z-index: 999;
+    transition: all 0.1s;
+}
+
+button.customButton:hover {
+    background-color: rgb(9, 93, 176);
+    color: rgb(220, 220, 220);
+}
+
+button.customButton.click {
+    background-color: rgb(7, 62, 118);
+    color: rgb(167, 167, 167);
+}
+
+button.customButton:disabled {
+    background-color: rgb(216, 216, 216);
+    color: rgb(160, 160, 160);
+    cursor: not-allowed;
+}
