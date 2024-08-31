@@ -7,27 +7,27 @@
     </head>
     <body>
         <h1>Settings</h1>
-        <p>Company name :</p>
-        <input type="text" name="CompanyName" id="companyName" />
+        <p class="setting-name">Company name :</p>
+        <input type="text" name="CompanyName" id="companyName" maxlength="40"/>
         <button id="submit">Submit</button>
         <p id="email"></p>
-        <p>Mail open :</p>
-        <p>
+        <p class="setting-name">Mail open :</p>
+        <p class="flex-box">
             Default
             <label class="switch">
-                <input type="checkbox" />
+                <input id="mailOpen" type="checkbox"/>
                 <span class="slider round"></span>
             </label>
             Gmail
         </p>
-        <p>Extension :</p>
-        <p>
-            Enable
+        <p class="setting-name">Extension state :</p>
+        <p class="flex-box">
+            Activated
             <label class="switch">
-                <input type="checkbox" />
+                <input id="state" type="checkbox" />
                 <span class="slider round"></span>
             </label>
-            Disable
+            Disabled
         </p>
         <script src="popup.js"></script>
     </body>

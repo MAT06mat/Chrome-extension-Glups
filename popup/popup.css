@@ -1,11 +1,30 @@
 body {
-    width: 280px;
-    height: 320px;
+    width: 300px;
+    height: 350px;
+    font-family: arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
 }
 
 p {
+    font-size: larger;
     justify-content: center;
     align-items: center;
+}
+
+.setting-name {
+    margin-top: 35px;
+    font-size: large;
+    font-weight: bolder;
+}
+
+.flex-box {
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .switch {
