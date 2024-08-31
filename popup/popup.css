@@ -20,6 +20,15 @@ p {
     font-weight: bolder;
 }
 
+input {
+    border: #ccc solid 1px;
+    width: 278.4px;
+    height: 23.4px;
+    padding: 0px 10px;
+    font-size: larger;
+    border-radius: 12.5px;
+}
+
 .flex-box {
     width: 200px;
     display: flex;
