@@ -28,10 +28,8 @@ button.addEventListener("click", () => {
     return;
   }
   var names = name.textContent.split(" ", 2);
-  chrome.storage.local.get(["companyName"], (result) => {
-    chrome.runtime.sendMessage({ type: "openMail", firstName: names[0], lastName: names[1] })
-    downloadPDF.click();
-  });
+  chrome.runtime.sendMessage({ type: "openMail", firstName: names[0], lastName: names[1] })
+  downloadPDF.click();
 });
 
 let currentUrl = location.href;
@@ -43,6 +41,15 @@ function urlChange() {
   } else {
     button.disabled = true;
   }
+
+  chrome.storage.local.get(["disabled"], (result) => {
+    if (result.disabled) {
+      button.style.display = "none"
+    } else {
+      button.style.display = "initial"
+    }
+  })
+
   var body = document.querySelector(".authentication-outlet");
   if (body) {
     if (!body.hasAttribute("customButton")) {
