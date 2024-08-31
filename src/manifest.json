@@ -18,7 +18,9 @@
     "tabs",
     "activeTab",
     "scripting",
-    "downloads"
+    "downloads",
+    "downloads.shelf",
+    "downloads.open"
   ],
   "content_scripts": [
     {
