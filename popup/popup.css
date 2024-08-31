@@ -77,6 +77,10 @@ input:checked + .slider {
     background-color: #ccc;
 }
 
+input:checked + .slider.blue {
+    background-color: #2196f3;
+}
+
 input:checked + .slider:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
