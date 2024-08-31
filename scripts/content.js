@@ -28,7 +28,11 @@ button.addEventListener("click", () => {
     return;
   }
   var names = name.textContent.split(" ", 2);
-  chrome.runtime.sendMessage({ type: "openMail", firstName: names[0], lastName: names[1] })
+  chrome.runtime.sendMessage({
+    type: "openMail",
+    firstName: names[0],
+    lastName: names[1],
+  });
   downloadPDF.click();
 });
 
@@ -44,19 +48,19 @@ function urlChange() {
 
   chrome.storage.local.get(["disabled"], (result) => {
     if (result.disabled) {
-      button.style.display = "none"
+      button.style.display = "none";
     } else {
-      button.style.display = "initial"
+      button.style.display = "initial";
     }
-  })
 
-  var body = document.querySelector(".authentication-outlet");
-  if (body) {
-    if (!body.hasAttribute("customButton")) {
-      body.setAttribute("customButton", true);
-      body.insertAdjacentElement("afterbegin", button);
+    var body = document.querySelector(".authentication-outlet");
+    if (body) {
+      if (!body.hasAttribute("customButton")) {
+        body.setAttribute("customButton", true);
+        body.insertAdjacentElement("afterbegin", button);
+      }
     }
-  }
+  });
 }
 
 setInterval(() => {
@@ -67,5 +71,5 @@ setInterval(() => {
 }, 100);
 
 function handleError(error) {
-  alert(`Error: ${error}`)
+  alert(`Error: ${error}`);
 }
