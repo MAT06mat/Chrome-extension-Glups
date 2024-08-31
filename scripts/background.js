@@ -21,7 +21,8 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       );
       const subject = encodeURIComponent("[talentpool]");
       const body = encodeURIComponent(
-        `${request.firstName}\n${request.lastName}\nm`
+        `${request.firstName}\n${request.lastName}\n${request.profileMail}\nm\nfr
+        \n\n*** Pensez à ajouter la pièce jointe (dernier fichier téléchargé)</b> ***`
       );
       if (result.useGmail) {
         chrome.tabs.create({

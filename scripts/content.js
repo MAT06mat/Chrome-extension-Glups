@@ -17,14 +17,14 @@ button.addEventListener("click", () => {
     "div[aria-label='Enregistrer au format PDF']"
   );
   if (!downloadPDF) {
-    handleError("Download PDF button unfind");
+    handleError("Download PDF button not found");
     return;
   }
   var name = document.querySelector(
     "div div div div div div div main section div div div div span a h1"
   );
   if (!name) {
-    handleError("Profile name unfind");
+    handleError("Profile name not found");
     return;
   }
   var names = name.textContent.split(" ", 2);
@@ -32,6 +32,7 @@ button.addEventListener("click", () => {
     type: "openMail",
     firstName: names[0],
     lastName: names[1],
+    profileMail: "nom.prenom@email.com",
   });
   downloadPDF.click();
 });
