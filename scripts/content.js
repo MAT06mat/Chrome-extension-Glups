@@ -14,7 +14,7 @@ button.addEventListener("mouseleave", () => {
 
 button.addEventListener("click", () => {
   var downloadPDF = document.querySelector(
-    "div[aria-label='Enregistrer au forma  t PDF']"
+    "div[aria-label='Enregistrer au format PDF']"
   );
   var alertPDF = ""
   if (!downloadPDF) {
