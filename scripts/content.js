@@ -14,27 +14,33 @@ button.addEventListener("mouseleave", () => {
 
 button.addEventListener("click", () => {
   var downloadPDF = document.querySelector(
-    "div[aria-label='Enregistrer au format PDF']"
+    "div[aria-label='Enregistrer au forma  t PDF']"
   );
+  var alertPDF = ""
   if (!downloadPDF) {
-    handleError("Download PDF button not found");
-    return;
+    handleError("Le PDF n'a pas pu être téléchargé");
+    alertPDF = "/!\\  ATTENTION Le CV n'a pu être téléchargé"
   }
+  console.log(alertPDF)
   var name = document.querySelector(
     "div div div div div div div main section div div div div span a h1"
   );
   if (!name) {
-    handleError("Profile name not found");
-    return;
+    handleError("Noms pas trouvés");
+    var names = ["ErreurPrenom", "ErreurNom"]
+  } else {
+    var names = name.textContent.split(" ", 2);
   }
-  var names = name.textContent.split(" ", 2);
   chrome.runtime.sendMessage({
     type: "openMail",
     firstName: names[0],
     lastName: names[1],
     profileMail: "nom.prenom@email.com",
+    alertPDF: alertPDF
   });
-  downloadPDF.click();
+  if (!alertPDF) {
+    downloadPDF.click();
+  }
 });
 
 let currentUrl = location.href;

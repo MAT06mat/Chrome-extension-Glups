@@ -16,13 +16,18 @@ function setDefault(propName, propDefault) {
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.type === "openMail") {
     chrome.storage.local.get(["companyName", "useGmail"], (result) => {
+      if (request.alertPDF) {
+        var alertPDF = request.alertPDF
+      } else {
+        var alertPDF = "*** Pensez à ajouter la pièce jointe (dernier fichier téléchargé) ***"
+      }
       const mail = encodeURIComponent(
         `send-in@${result.companyName}.softgarden.io`
       );
       const subject = encodeURIComponent("[talentpool]");
       const body = encodeURIComponent(
         `${request.firstName}\n${request.lastName}\n${request.profileMail}\nm\nfr
-        \n\n*** Pensez à ajouter la pièce jointe (dernier fichier téléchargé)</b> ***`
+        \n\n${alertPDF}`
       );
       if (result.useGmail) {
         chrome.tabs.create({
