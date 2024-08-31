@@ -29,10 +29,6 @@ button.addEventListener("click", () => {
   }
   var names = name.textContent.split(" ", 2);
   chrome.storage.local.get(["companyName"], (result) => {
-    if (result.companyName == undefined) {
-      handleError("Company name undefined")
-      return
-    }
     chrome.runtime.sendMessage({ type: "openMail", firstName: names[0], lastName: names[1] })
     downloadPDF.click();
   });

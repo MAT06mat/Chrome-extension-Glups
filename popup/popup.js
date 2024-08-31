@@ -24,10 +24,6 @@ state.addEventListener("click", () => {
   chrome.storage.local.set({ disabled: state.checked });
 })
 
-
-setDefault("companyName", "default");
-setDefault("useGmail", false);
-setDefault("disabled", false);
 reload();
 
 function reload() {
@@ -41,16 +37,4 @@ function reload() {
   chrome.storage.local.get(["disabled"], (result) => {
     state.checked = result.disabled
   });
-}
-
-function setDefault(propName, propDefault) {
-  chrome.storage.local.get([propName], (result) => {
-    console.log(propName, propDefault, result[propName])
-    if (!result[propName]) {
-      var prop = {}
-      prop[propName] = propDefault
-      console.log(prop)
-      chrome.storage.local.set(prop);
-    }
-  })
 }

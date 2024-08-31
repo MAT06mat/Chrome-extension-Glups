@@ -1,3 +1,18 @@
+setDefault("companyName", "default");
+setDefault("useGmail", false);
+setDefault("disabled", false);
+
+function setDefault(propName, propDefault) {
+  chrome.storage.local.get([propName], (result) => {
+    if (!result[propName]) {
+      var prop = {}
+      prop[propName] = propDefault
+      chrome.storage.local.set(prop);
+    }
+  })
+}
+
+
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.type === "openMail") {
     chrome.storage.local.get(["companyName"], (result) => {
