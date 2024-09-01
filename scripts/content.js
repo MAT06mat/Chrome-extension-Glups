@@ -108,5 +108,5 @@ setInterval(() => {
 
 // Send alert when there is an error
 function handleError(error) {
-  alert(`Error: ${error}`);
+  alert(`Erreur: ${error}`);
 }
