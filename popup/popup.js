@@ -1,31 +1,42 @@
 // Def settings buttons and inputs
-const textInput = document.getElementById("companyName");
-const submit = document.getElementById("submit");
+const companyNameInput = document.getElementById("companyName");
+const userMailInput = document.getElementById("userMail");
 const email = document.getElementById("email");
 const mailOpen = document.getElementById("mailOpen");
+const autoDownload = document.getElementById("autoDownload");
 const state = document.getElementById("state");
 
 // Add event listener for save settings
-textInput.addEventListener("input", (event) => {
-  email.innerText = `Email : send-in@${textInput.value}.softgarden.io`;
-  chrome.storage.local.set({ companyName: textInput.value });
+companyNameInput.addEventListener("input", (event) => {
+  email.innerText = `Email : send-in@${companyNameInput.value}.softgarden.io`;
+  chrome.storage.local.set({ companyName: companyNameInput.value });
 });
-
+userMailInput.addEventListener("input", (event) => {
+  chrome.storage.local.set({ userMail: userMailInput.value });
+});
 mailOpen.addEventListener("click", () => {
   chrome.storage.local.set({ useGmail: mailOpen.checked });
 });
-
+autoDownload.addEventListener("click", () => {
+  chrome.storage.local.set({ autoDownload: !autoDownload.checked });
+});
 state.addEventListener("click", () => {
   chrome.storage.local.set({ disabled: state.checked });
 });
 
 // Change default value to thoses saved
 chrome.storage.local.get(["companyName"], (result) => {
-  textInput.value = result.companyName;
-  email.innerText = `Email : send-in@${textInput.value}.softgarden.io`;
+  companyNameInput.value = result.companyName;
+  email.innerText = `Email : send-in@${companyNameInput.value}.softgarden.io`;
+});
+chrome.storage.local.get(["userMail"], (result) => {
+  userMailInput.value = result.userMail;
 });
 chrome.storage.local.get(["useGmail"], (result) => {
   mailOpen.checked = result.useGmail;
+});
+chrome.storage.local.get(["autoDownload"], (result) => {
+  autoDownload.checked = !result.autoDownload;
 });
 chrome.storage.local.get(["disabled"], (result) => {
   state.checked = result.disabled;

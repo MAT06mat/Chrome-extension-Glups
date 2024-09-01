@@ -1,6 +1,6 @@
 body {
     width: 300px;
-    height: 350px;
+    height: 500px;
     font-family: arial, sans-serif;
 }
 
@@ -9,6 +9,7 @@ h1 {
 }
 
 p {
+    margin: 10px 0px;
     font-size: larger;
     justify-content: center;
     align-items: center;
@@ -16,11 +17,13 @@ p {
 
 .setting-name {
     margin-top: 35px;
+    margin-bottom: 0px;
     font-size: large;
     font-weight: bolder;
 }
 
 input {
+    margin-top: 10px;
     border: #ccc solid 1px;
     width: 278.4px;
     height: 23.4px;

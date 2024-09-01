@@ -12,12 +12,16 @@
         <h1>Paramètres</h1>
 
         <!-- Company Name -->
-        <p class="setting-name">Nom de société :</p>
-        <input type="text" name="CompanyName" id="companyName" maxlength="40"/>
+        <p class="setting-name">Nom de société</p>
+        <input type="text" name="CompanyName" id="companyName" maxlength="100" placeholder="Exemple"/>
         <p id="email"></p>
+
+        <!-- User Mail -->
+        <p class="setting-name">Mail par defaut</p>
+        <input type="text" name="userMail" id="userMail" maxlength="100" placeholder="prenom.nom@gmail.com"/>
         
         <!-- Mail to open -->
-        <p class="setting-name">Mail à ouvrir :</p>
+        <p class="setting-name">Mail à ouvrir</p>
         <p class="flex-box">
             Défaut
             <label class="switch">
@@ -27,15 +31,26 @@
             Gmail
         </p>
 
+        <!-- Auto download -->
+        <p class="setting-name">Auto téléchargement PDF</p>
+        <p class="flex-box">
+            Oui
+            <label class="switch">
+                <input id="autoDownload" type="checkbox"/>
+                <span class="slider round"></span>
+            </label>
+            Non
+        </p>
+
         <!-- Extension state -->
-        <p class="setting-name">État de l'extension :</p>
+        <p class="setting-name">État de l'extension</p>
         <p class="flex-box">
             Activé
             <label class="switch">
                 <input id="state" type="checkbox" />
                 <span class="slider round"></span>
             </label>
-            Déactivé
+            Désactivé
         </p>
 
         <!-- script js -->
