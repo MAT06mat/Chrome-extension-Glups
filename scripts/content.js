@@ -13,34 +13,36 @@ button.addEventListener("mouseleave", () => {
 });
 
 button.addEventListener("click", () => {
-  var downloadPDF = document.querySelector(
-    "div[aria-label='Enregistrer au format PDF']"
-  );
-  var alertPDF = ""
-  if (!downloadPDF) {
-    handleError("Le PDF n'a pas pu être téléchargé");
-    alertPDF = "/!\\  ATTENTION Le CV n'a pu être téléchargé"
-  }
-  console.log(alertPDF)
-  var name = document.querySelector(
-    "div div div div div div div main section div div div div span a h1"
-  );
-  if (!name) {
-    handleError("Noms pas trouvés");
-    var names = ["ErreurPrenom", "ErreurNom"]
-  } else {
-    var names = name.textContent.split(" ", 2);
-  }
-  chrome.runtime.sendMessage({
-    type: "openMail",
-    firstName: names[0],
-    lastName: names[1],
-    profileMail: "nom.prenom@email.com",
-    alertPDF: alertPDF
-  });
-  if (!alertPDF) {
-    downloadPDF.click();
-  }
+  chrome.storage.local.get(["increment"], (result) => {
+    var downloadPDF = document.querySelector(
+      "div[aria-label='Enregistrer au format PDF']"
+    );
+    var alertPDF = ""
+    if (!downloadPDF) {
+      handleError("Le PDF n'a pas pu être téléchargé");
+      alertPDF = "/!\\  ATTENTION Le CV n'a pu être téléchargé"
+    }
+    var name = document.querySelector(
+      "div div div div div div div main section div div div div span a h1"
+    );
+    if (!name) {
+      handleError("Noms pas trouvés");
+      var names = ["ErreurPrenom", "ErreurNom"]
+    } else {
+      var names = name.textContent.split(" ", 2);
+    }
+    chrome.runtime.sendMessage({
+      type: "openMail",
+      firstName: names[0],
+      lastName: names[1],
+      profileMail: `prenom.nom.${result.increment}.${Math.floor(Math.random()*1000000)}@email.com`,
+      alertPDF: alertPDF
+    });
+    if (!alertPDF) {
+      downloadPDF.click();
+    }
+    chrome.storage.local.set({increment: result.increment + 1})
+  })
 });
 
 let currentUrl = location.href;

@@ -1,6 +1,7 @@
 setDefault("companyName", "default");
 setDefault("useGmail", false);
 setDefault("disabled", false);
+setDefault("increment", 0);
 
 function setDefault(propName, propDefault) {
   chrome.storage.local.get([propName], (result) => {
