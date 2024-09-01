@@ -3,13 +3,20 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <!-- style css -->
         <link rel="stylesheet" href="popup.css" />
     </head>
     <body>
+        <!----------------------Settings---------------------->
         <h1>Paramètres</h1>
+
+        <!-- Company Name -->
         <p class="setting-name">Nom de société :</p>
         <input type="text" name="CompanyName" id="companyName" maxlength="40"/>
         <p id="email"></p>
+        
+        <!-- Mail to open -->
         <p class="setting-name">Mail à ouvrir :</p>
         <p class="flex-box">
             Défaut
@@ -19,7 +26,9 @@
             </label>
             Gmail
         </p>
-        <p class="setting-name">État :</p>
+
+        <!-- Extension state -->
+        <p class="setting-name">État de l'extension :</p>
         <p class="flex-box">
             Activé
             <label class="switch">
@@ -28,6 +37,8 @@
             </label>
             Déactivé
         </p>
+
+        <!-- script js -->
         <script src="popup.js"></script>
     </body>
 </html>

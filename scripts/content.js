@@ -1,3 +1,4 @@
+// Def Glups button
 const button = document.createElement("button");
 button.innerText = "Glups";
 button.classList.add("customButton");
@@ -12,8 +13,10 @@ button.addEventListener("mouseleave", () => {
   button.classList.remove("click");
 });
 
+// Add event when button clicked
 button.addEventListener("click", () => {
   chrome.storage.local.get(["increment"], (result) => {
+    // Get PDF button
     var downloadPDF = document.querySelector(
       "div[aria-label='Enregistrer au format PDF']"
     );
@@ -22,6 +25,7 @@ button.addEventListener("click", () => {
       handleError("Le PDF n'a pas pu être téléchargé");
       alertPDF = "/!\\  ATTENTION Le CV n'a pu être téléchargé"
     }
+    // Get name label
     var name = document.querySelector(
       "div div div div div div div main section div div div div span a h1"
     );
@@ -31,6 +35,7 @@ button.addEventListener("click", () => {
     } else {
       var names = name.textContent.split(" ", 2);
     }
+    // Send message to background to open mailbox
     chrome.runtime.sendMessage({
       type: "openMail",
       firstName: names[0],
@@ -45,9 +50,11 @@ button.addEventListener("click", () => {
   })
 });
 
+
 let currentUrl = location.href;
 
 urlChange();
+// Call when url change
 function urlChange() {
   if (currentUrl.includes("linkedin.com/in/")) {
     button.disabled = false;
@@ -72,6 +79,7 @@ function urlChange() {
   });
 }
 
+// Trigger when url change
 setInterval(() => {
   if (location.href !== currentUrl) {
     currentUrl = location.href;
@@ -79,6 +87,8 @@ setInterval(() => {
   }
 }, 100);
 
+
+// Send alert when there is an error
 function handleError(error) {
   alert(`Error: ${error}`);
 }

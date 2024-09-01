@@ -1,3 +1,4 @@
+// Set default values to var saved in extension storage
 setDefault("companyName", "default");
 setDefault("useGmail", false);
 setDefault("disabled", false);
@@ -6,21 +7,22 @@ setDefault("increment", 0);
 function setDefault(propName, propDefault) {
   chrome.storage.local.get([propName], (result) => {
     if (!result[propName]) {
-      var prop = {}
-      prop[propName] = propDefault
+      var prop = {};
+      prop[propName] = propDefault;
       chrome.storage.local.set(prop);
     }
-  })
+  });
 }
 
-
+// Open mailbox with auto-fill informations
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.type === "openMail") {
     chrome.storage.local.get(["companyName", "useGmail"], (result) => {
       if (request.alertPDF) {
-        var alertPDF = request.alertPDF
+        var alertPDF = request.alertPDF;
       } else {
-        var alertPDF = "*** Pensez à ajouter la pièce jointe (dernier fichier téléchargé) ***"
+        var alertPDF =
+          "*** Pensez à ajouter la pièce jointe (dernier fichier téléchargé) ***";
       }
       const mail = encodeURIComponent(
         `send-in@${result.companyName}.softgarden.io`
