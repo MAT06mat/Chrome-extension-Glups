@@ -4,7 +4,7 @@
 
 body {
     width: 300px;
-    height: 430px;
+    height: auto;
     font-family: arial, sans-serif;
 }
 
@@ -21,9 +21,15 @@ p {
 
 .setting-name {
     margin-top: 35px;
-    margin-bottom: 0px;
+    margin-bottom: 5px;
     font-size: large;
     font-weight: bolder;
+}
+
+.email {
+    margin-left: 11px;
+    color: #444;
+    font-size: 14px;
 }
 
 input {
