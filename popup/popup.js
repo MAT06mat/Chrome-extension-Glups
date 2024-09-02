@@ -15,7 +15,7 @@ userMailInput.addEventListener("input", (event) => {
   chrome.storage.local.set({ userMail: userMailInput.value });
 });
 mailOpen.addEventListener("click", () => {
-  chrome.storage.local.set({ useGmail: mailOpen.checked });
+  chrome.storage.local.set({ useGmail: !mailOpen.checked });
 });
 autoDownload.addEventListener("click", () => {
   chrome.storage.local.set({ autoDownload: !autoDownload.checked });
@@ -33,7 +33,7 @@ chrome.storage.local.get(["userMail"], (result) => {
   userMailInput.value = result.userMail;
 });
 chrome.storage.local.get(["useGmail"], (result) => {
-  mailOpen.checked = result.useGmail;
+  mailOpen.checked = !result.useGmail;
 });
 chrome.storage.local.get(["autoDownload"], (result) => {
   autoDownload.checked = !result.autoDownload;
