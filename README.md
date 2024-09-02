@@ -1,5 +1,7 @@
 # Projet Glups
 
+Toutes ces étapes sont disponibles dans [ce PDF](tuto.pdf).
+
 ## Installation
 
 1. Pour commencer cliquez sur le bouton ``<> Code`` en vert. Puis sur ``Download ZIP``. [Vidéo](#télécharger-le-zip)
