@@ -13,6 +13,12 @@ Toutes ces étapes sont disponibles dans [ce PDF](tuto.pdf).
 
 ## Utilisation
 
+> Vous pouvez à tout moment changer dans les paramètres :
+> - Le nom de la société
+> - Le mail par defaut
+> - L'utilisation de Gmail
+> - L'auto téléchargement des PDF
+
 1. Aller sur votre compte LinkedIn à partir de votre navigateur Chrome et allez sur votre profil, ou sur n’importe quel autre profil.
 2. Cliquez sur le bouton bleu ``Glups`` qui apparait en haut à gauche.
 3. Votre email s'ouvre, vous pouvez modifier :
