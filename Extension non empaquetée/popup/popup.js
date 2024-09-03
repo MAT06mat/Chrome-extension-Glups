@@ -15,13 +15,13 @@ userMailInput.addEventListener("input", (event) => {
   chrome.storage.local.set({ userMail: userMailInput.value });
 });
 mailOpen.addEventListener("click", () => {
-  chrome.storage.local.set({ useGmail: !mailOpen.checked });
+  chrome.storage.local.set({ useGmail: mailOpen.checked });
 });
 autoDownload.addEventListener("click", () => {
-  chrome.storage.local.set({ autoDownload: !autoDownload.checked });
+  chrome.storage.local.set({ autoDownload: autoDownload.checked });
 });
 state.addEventListener("click", () => {
-  chrome.storage.local.set({ disabled: state.checked });
+  chrome.storage.local.set({ disabled: !state.checked });
 });
 
 // Change default value to thoses saved
@@ -33,11 +33,11 @@ chrome.storage.local.get(["userMail"], (result) => {
   userMailInput.value = result.userMail;
 });
 chrome.storage.local.get(["useGmail"], (result) => {
-  mailOpen.checked = !result.useGmail;
+  mailOpen.checked = result.useGmail;
 });
 chrome.storage.local.get(["autoDownload"], (result) => {
-  autoDownload.checked = !result.autoDownload;
+  autoDownload.checked = result.autoDownload;
 });
 chrome.storage.local.get(["disabled"], (result) => {
-  state.checked = result.disabled;
+  state.checked = !result.disabled;
 });

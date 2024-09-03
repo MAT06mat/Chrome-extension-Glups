@@ -7,7 +7,7 @@ Toutes ces étapes sont disponibles dans [ce PDF](tuto.pdf).
 
 1. Pour commencer cliquez sur le bouton ``<> Code`` en vert. Puis sur ``Download ZIP``. [Vidéo](#télécharger-le-zip)
 2. Ouvrez l'explorateur de fichier et allez dans téléchargements. Faites clique droit sur ``Chrome-extension-Glups-main.zip`` puis sur ``Extraire tout...`` et valider. [Vidéo](#dézipper)
-3. Rendez vous sur ``chrome://extensions/`` dans la barre de navigation. Cochez la case ``Mode développeur`` en haut à droite et cliquez sur ``Charger l'extension non empaquetée``. Allez dans téléchargement, entrez dans ``Chrome-extension-Glups-main``, choisissez ``Chrome-extension-Glups-main`` (le répertoire à l'interrieur du premier) et validez. [Vidéo](#charger-lextension)
+3. Rendez vous sur ``chrome://extensions/`` dans la barre de navigation. Cochez la case ``Mode développeur`` en haut à droite et cliquez sur ``Charger l'extension non empaquetée``. Allez dans téléchargement, entrez dans ``Chrome-extension-Glups-main``, choisissez ``Extension non empaquetée`` (le répertoire à l'interrieur du premier) et validez. [Vidéo](#charger-lextension)
 4. Dans Google Chrome, une icone pièce de puzzle apparaitra à coté de la bare de navigation. Cliquez dessus puis sur ``Glups``. Vous pourrez accedez aux paramètres de l'extension. Changez bien ``Nom de société`` par la votre et ``Mail par defaut`` par votre email professionnel, pas besoin de sauvegarder, l'enregistrement est automatique. [Vidéo](#modifier-les-paramètres)
 
 

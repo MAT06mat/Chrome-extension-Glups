@@ -69,7 +69,7 @@ input {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #2196f3;
+    background-color: #ccc;
     -webkit-transition: 0.4s;
     transition: 0.4s;
 }
@@ -87,7 +87,7 @@ input {
 }
 
 input:checked + .slider {
-    background-color: #ccc;
+    background-color: #2196f3;
 }
 
 input:checked + .slider:before {
