@@ -35,7 +35,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     );
     const subject = encodeURIComponent("[talentpool]");
     const body = encodeURIComponent(
-      `${request.firstName}\n${request.lastName}\n${request.userMail}\nm\nfr\n\n${alertPDF}\nMail n°${request.increment}`
+      `${request.firstName}\n${request.lastName}\n${request.userMail}\n\nfr\n\n${alertPDF}\nMail n°${request.increment}`
     );
     if (request.useGmail) {
       chrome.tabs.create({

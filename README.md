@@ -16,10 +16,9 @@ Toutes ces étapes sont disponibles dans [ce PDF](tuto.pdf).
 1. Aller sur votre compte LinkedIn à partir de votre navigateur Chrome et allez sur votre profil, ou sur n’importe quel autre profil.
 2. Cliquez sur le bouton bleu ``Glups`` qui apparait en haut à gauche.
 3. Votre email s'ouvre, vous pouvez modifier :
-    - Le nom/prenom de la personne si besoin
-    - Le genre de la personne (m/f) par defaut m
+    - Le nom ou le prenom du profil si besoin
     - Pensez à rajouter en pièce jointe ``Profil.pdf`` qui s’est téléchargé dans le dossier téléchargement (dernier fichier téléchargé).
-4. Envoyez l'email et normalement le profil a été transféré.
+4. Envoyez l'email et le profil a été transféré.
 
 
 ## Vidéos
