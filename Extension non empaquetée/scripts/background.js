@@ -8,7 +8,7 @@ setDefault("increment", 0);
 
 function setDefault(propName, propDefault) {
   chrome.storage.local.get([propName], (result) => {
-    if (!result[propName]) {
+    if (result[propName] == undefined) {
       var prop = {};
       prop[propName] = propDefault;
       chrome.storage.local.set(prop);
@@ -27,7 +27,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
           "*** Pensez à ajouter la pièce jointe (dernier fichier téléchargé) ***";
       } else {
         var alertPDF =
-          "*** Pensez télécharger et à ajouter la pièce jointe ***";
+          "*** Pensez à télécharger et à ajouter la pièce jointe ***";
       }
     }
     const mail = encodeURIComponent(
