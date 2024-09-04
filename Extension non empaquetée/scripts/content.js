@@ -1,6 +1,6 @@
 // Def Glups button
 const button = document.createElement("button");
-button.innerText = "Glups";
+button.innerText = "Go";
 button.classList.add("customButton");
 
 button.addEventListener("mousedown", () => {
