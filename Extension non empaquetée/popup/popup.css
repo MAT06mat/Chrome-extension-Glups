@@ -5,6 +5,7 @@
 body {
     width: 300px;
     height: auto;
+    margin-bottom: 10px;
     font-family: arial, sans-serif;
 }
 
@@ -40,6 +41,31 @@ input {
     padding: 0px 10px;
     font-size: larger;
     border-radius: 12.5px;
+}
+
+div.reset {
+    position: relative;
+}
+
+.reset img {
+    position: absolute;
+    right: 0;
+    margin-top: 11px;
+    margin-right: 1px;
+    width: 23.4px;
+    height: 23.4px;
+    border: none;
+    cursor: pointer;
+    border-radius: 11.7px;
+    transition: all .4s;
+}
+
+.reset img:hover {
+    background-color: #eee;
+}
+
+.reset img:active {
+    background-color: #ccc;
 }
 
 .flex-box {

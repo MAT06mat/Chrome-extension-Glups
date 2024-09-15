@@ -16,7 +16,7 @@ button.addEventListener("mouseleave", () => {
 // Add event when button clicked
 button.addEventListener("click", () => {
   chrome.storage.local.get(
-    ["increment", "userMail", "useGmail", "autoDownload", "companyName"],
+    ["increment", "userMail", "useGmail", "autoDownload", "companyName", "mailSubject"],
     (result) => {
       if (!result.companyName) {
         handleError(
@@ -26,6 +26,10 @@ button.addEventListener("click", () => {
       } else if (!result.userMail) {
         handleError("Le mail par defaut n'a pas été saisi dans les paramètres");
         return;
+      }
+
+      if (!result.mailSubject) {
+        result.mailSubject = "[talentpool]"
       }
 
       // Get PDF button

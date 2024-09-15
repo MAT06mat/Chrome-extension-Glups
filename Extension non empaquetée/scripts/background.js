@@ -1,6 +1,7 @@
 // Set default values to var saved in extension storage
 setDefault("companyName", "");
 setDefault("userMail", "");
+setDefault("mailSubject", "[talentpool]");
 setDefault("useGmail", false);
 setDefault("autoDownload", true);
 setDefault("disabled", false);
@@ -33,7 +34,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     const mail = encodeURIComponent(
       `send-in@${request.companyName}.softgarden.io`
     );
-    const subject = encodeURIComponent("[talentpool]");
+    const subject = encodeURIComponent(request.mailSubject);
     const body = encodeURIComponent(
       `${request.firstName}\n${request.lastName}\n${request.userMail}\n\nfr\n\n${alertPDF}\nMail n°${request.increment}`
     );

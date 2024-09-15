@@ -16,6 +16,7 @@ Toutes ces étapes sont disponibles dans [ce PDF](tuto.pdf).
 > Vous pouvez à tout moment changer dans les paramètres :
 > - Le nom de la société
 > - Le mail par defaut
+> - L'objet du mail
 > - L'utilisation de Gmail
 > - L'auto téléchargement des PDF
 
